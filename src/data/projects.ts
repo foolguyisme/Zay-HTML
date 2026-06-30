@@ -83,13 +83,4 @@ export const projects: Project[] = [
     coverType: "keyboard",
     readmePath: "/projects/java-swing.md",
   },
-  {
-    id: "kaggle",
-    title: "Kaggle 數據科學競賽成就",
-    tags: ["Machine Learning", "Feature Engineering", "Data Cleaning"],
-    summary:
-      "Spaceship Titanic Top 7%、Titanic Top 18%、House Prices Top 31%。展現扎實的數據清理與底層特徵工程實戰力。",
-    coverType: "badge",
-    readmePath: "/projects/kaggle.md",
-  },
 ];
