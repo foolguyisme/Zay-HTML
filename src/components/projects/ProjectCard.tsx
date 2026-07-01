@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import type { Project } from "@/data/projects";
 import { ProjectCover } from "./ProjectCover";
+import { ProjectHighlights } from "./ProjectHighlights";
 
 interface ProjectCardProps {
   project: Project;
@@ -23,6 +24,8 @@ export function ProjectCard({ project, onClick }: ProjectCardProps) {
       <ProjectCover
         type={project.coverType}
         youtubeEmbedUrl={project.youtubeEmbedUrl}
+        coverImage={project.coverImage}
+        coverImageAlt={`${project.title} preview`}
       />
       <div className="p-4 sm:p-5">
         <div className="mb-2 flex items-start justify-between gap-2">
@@ -35,9 +38,17 @@ export function ProjectCard({ project, onClick }: ProjectCardProps) {
             </span>
           )}
         </div>
-        <p className="mb-3 line-clamp-2 text-xs leading-relaxed text-neutral-500">
+        <p className="mb-3 text-xs leading-relaxed text-neutral-500">
           {project.summary}
         </p>
+        {project.highlightItems ? (
+          <div className="mb-3">
+            <ProjectHighlights
+              highlights={project.highlightItems}
+              compact
+            />
+          </div>
+        ) : null}
         <div className="flex flex-wrap gap-1.5">
           {project.tags.slice(0, 4).map((tag) => (
             <span

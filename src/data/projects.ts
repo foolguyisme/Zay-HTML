@@ -1,3 +1,6 @@
+import type { ProjectHighlight } from "@/data/zayaiHighlights";
+import { zayaiHighlights } from "@/data/zayaiHighlights";
+
 export type CoverType =
   | "youtube"
   | "terminal"
@@ -15,7 +18,9 @@ export interface Project {
   coverType: CoverType;
   readmePath: string;
   youtubeEmbedUrl?: string;
+  coverImage?: string;
   featured?: boolean;
+  highlightItems?: ProjectHighlight[];
 }
 
 export const projects: Project[] = [
@@ -31,11 +36,12 @@ export const projects: Project[] = [
       "pyttsx3",
     ],
     summary:
-      "離線隱私・二次元 AI 桌面伴侶。串接語音辨識、TTS 與本地端大模型推論，並實作 VRAM 防護與對話記憶機制。",
+      "離線隱私・全模態 AI 桌面伴侶 — 從捏角、螢幕互動到動態立繪，打造專屬二次元靈魂。",
     coverType: "youtube",
     readmePath: "/projects/zayai.md",
-    youtubeEmbedUrl: "",
+    coverImage: "/image.png",
     featured: true,
+    highlightItems: zayaiHighlights,
   },
   {
     id: "ai-coder",

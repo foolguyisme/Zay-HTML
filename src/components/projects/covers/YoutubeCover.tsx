@@ -1,13 +1,30 @@
 "use client";
 
+import Image from "next/image";
+
 interface YoutubeCoverProps {
   embedUrl?: string;
+  imageSrc?: string;
+  imageAlt?: string;
 }
 
-export function YoutubeCover({ embedUrl }: YoutubeCoverProps) {
+export function YoutubeCover({
+  embedUrl,
+  imageSrc,
+  imageAlt = "Project cover",
+}: YoutubeCoverProps) {
   return (
     <div className="relative aspect-video w-full overflow-hidden rounded-t-lg border-b border-cyber/20 bg-[#0a0a0a] glow-border">
-      {embedUrl ? (
+      {imageSrc ? (
+        <Image
+          src={imageSrc}
+          alt={imageAlt}
+          fill
+          className="object-cover object-center"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          priority={false}
+        />
+      ) : embedUrl ? (
         <iframe
           src={embedUrl}
           title="Project Demo"
@@ -21,10 +38,7 @@ export function YoutubeCover({ embedUrl }: YoutubeCoverProps) {
             <div className="ml-1 h-0 w-0 border-y-[10px] border-l-[16px] border-y-transparent border-l-cyber" />
           </div>
           <p className="font-mono text-xs text-cyber/50">
-            // YouTube Demo — paste embed URL in projects.ts
-          </p>
-          <p className="font-mono text-[10px] text-neutral-600">
-            youtubeEmbedUrl: &quot;&quot;
+            // Demo media — set coverImage or youtubeEmbedUrl in projects.ts
           </p>
         </div>
       )}

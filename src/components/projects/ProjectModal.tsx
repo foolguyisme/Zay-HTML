@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import type { Project } from "@/data/projects";
 import { MarkdownRenderer } from "@/components/ui/MarkdownRenderer";
 import { ProjectCover } from "./ProjectCover";
+import { ProjectHighlights } from "./ProjectHighlights";
 
 interface ProjectModalProps {
   project: Project | null;
@@ -82,6 +83,8 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
               <ProjectCover
                 type={project.coverType}
                 youtubeEmbedUrl={project.youtubeEmbedUrl}
+                coverImage={project.coverImage}
+                coverImageAlt={`${project.title} preview`}
               />
               <div className="p-6">
                 <h3 className="mb-2 font-mono text-xl font-bold text-cyber glow-text">
@@ -97,7 +100,15 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                     </span>
                   ))}
                 </div>
-                <p className="mb-6 text-sm text-neutral-400">{project.summary}</p>
+                <p className="mb-4 text-sm text-neutral-400">{project.summary}</p>
+                {project.highlightItems && (
+                  <div className="mb-6">
+                    <p className="mb-3 font-mono text-xs text-cyber">
+                      // core_highlights
+                    </p>
+                    <ProjectHighlights highlights={project.highlightItems} />
+                  </div>
+                )}
                 <div className="border-t border-border-dim pt-4">
                   {loading ? (
                     <div className="flex items-center gap-2 font-mono text-sm text-neutral-500">

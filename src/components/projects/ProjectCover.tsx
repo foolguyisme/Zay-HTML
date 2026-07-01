@@ -12,12 +12,25 @@ import { BadgeCover } from "./covers/BadgeCover";
 interface ProjectCoverProps {
   type: CoverType;
   youtubeEmbedUrl?: string;
+  coverImage?: string;
+  coverImageAlt?: string;
 }
 
-export function ProjectCover({ type, youtubeEmbedUrl }: ProjectCoverProps) {
+export function ProjectCover({
+  type,
+  youtubeEmbedUrl,
+  coverImage,
+  coverImageAlt,
+}: ProjectCoverProps) {
   switch (type) {
     case "youtube":
-      return <YoutubeCover embedUrl={youtubeEmbedUrl} />;
+      return (
+        <YoutubeCover
+          embedUrl={youtubeEmbedUrl}
+          imageSrc={coverImage}
+          imageAlt={coverImageAlt}
+        />
+      );
     case "terminal":
       return <TerminalCover />;
     case "chart":
