@@ -26,12 +26,6 @@ export function ProjectsSection() {
             </FadeInSection>
           ))}
         </div>
-
-        <FadeInSection delay={0.5} className="mt-8">
-          <p className="text-center font-mono text-xs text-neutral-600">
-            // click card to view README · add docs to public/projects/
-          </p>
-        </FadeInSection>
       </div>
 
       <ProjectModal project={selected} onClose={() => setSelected(null)} />
