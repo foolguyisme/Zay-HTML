@@ -8,6 +8,9 @@ import { PipelineCover } from "./covers/PipelineCover";
 import { AsciiCover } from "./covers/AsciiCover";
 import { KeyboardCover } from "./covers/KeyboardCover";
 import { BadgeCover } from "./covers/BadgeCover";
+import { WatermarkCover } from "./covers/WatermarkCover";
+import { GuardCover } from "./covers/GuardCover";
+import { CaptionCover } from "./covers/CaptionCover";
 
 interface ProjectCoverProps {
   type: CoverType;
@@ -43,6 +46,12 @@ export function ProjectCover({
       return <KeyboardCover />;
     case "badge":
       return <BadgeCover />;
+    case "watermark":
+      return <WatermarkCover />;
+    case "guard":
+      return <GuardCover />;
+    case "caption":
+      return <CaptionCover />;
     default:
       return null;
   }

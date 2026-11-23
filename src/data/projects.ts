@@ -8,7 +8,10 @@ export type CoverType =
   | "pipeline"
   | "ascii"
   | "keyboard"
-  | "badge";
+  | "badge"
+  | "watermark"
+  | "guard"
+  | "caption";
 
 export interface Project {
   id: string;
@@ -52,6 +55,48 @@ export const projects: Project[] = [
     coverType: "terminal",
     readmePath: "/projects/ai-coder.md",
     featured: true,
+  },
+  {
+    id: "wm3-watermark",
+    title: "wm3 盲浮水印外流溯源系統",
+    tags: [
+      "Python",
+      "NumPy",
+      "Numba / CuPy",
+      "OpenCV",
+      "Reed-Solomon",
+      "FastAPI",
+      "Vue 3",
+    ],
+    summary:
+      "把每位使用者的識別碼藏進圖片亮度，外流後即使被壓縮、截圖、縮放或裁切仍能指認來源；證據不足寧可回報無法溯源也不誤指認。有原圖時 31 種攻擊成功率 99%，寫入速度較 V2 快 60 倍以上。",
+    coverType: "watermark",
+    readmePath: "/projects/wm3-watermark.md",
+  },
+  {
+    id: "ai-guard",
+    title: "AI Guard 企業生成式 AI 資料防護",
+    tags: ["JavaScript", "Chrome Extension (MV3)", "Node.js", "DLP", "Privacy"],
+    summary:
+      "在員工把資料送進 ChatGPT、Claude、Gemini、Copilot 之前，於瀏覽器本機偵測 Email、卡號、API 金鑰與企業關鍵字，依政策提醒、遮罩或阻擋；事件只留中繼資料，不保存提示原文。",
+    coverType: "guard",
+    readmePath: "/projects/ai-guard.md",
+  },
+  {
+    id: "shengyi-captions",
+    title: "聲譯：本機即時字幕",
+    tags: [
+      "Python",
+      "faster-whisper",
+      "Ollama",
+      "RapidOCR",
+      "FastAPI",
+      "Chrome Extension",
+    ],
+    summary:
+      "Windows 桌面即時字幕翻譯：分頁音訊、YouTube CC、畫面 OCR 三種輸入，本機 Whisper 辨識加 Ollama 翻譯，結果顯示在可拖曳的置頂浮窗，字幕不送雲端。",
+    coverType: "caption",
+    readmePath: "/projects/shengyi-captions.md",
   },
   {
     id: "finance-ts",
