@@ -14,11 +14,11 @@ export function PortfolioPage() {
       <Navbar />
       <main>
         <HeroSection />
+        <ProjectsSection />
         <AboutSection />
         <TechStackSection />
         <KaggleStats />
         <ExperienceTimeline />
-        <ProjectsSection />
       </main>
     </>
   );
