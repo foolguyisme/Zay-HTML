@@ -1,5 +1,6 @@
 import type { ProjectHighlight } from "@/data/zayaiHighlights";
 import { zayaiHighlights } from "@/data/zayaiHighlights";
+import { motivationsById } from "@/data/motivations";
 
 export type CoverType =
   | "youtube"
@@ -24,9 +25,10 @@ export interface Project {
   coverImage?: string;
   featured?: boolean;
   highlightItems?: ProjectHighlight[];
+  motivation?: string;
 }
 
-export const projects: Project[] = [
+const baseProjects: Omit<Project, "motivation">[] = [
   {
     id: "zayai",
     title: "ZAYAI_Connecting_dimensions",
@@ -135,3 +137,8 @@ export const projects: Project[] = [
     readmePath: "/projects/java-swing.md",
   },
 ];
+
+export const projects: Project[] = baseProjects.map((p) => ({
+  ...p,
+  motivation: motivationsById[p.id],
+}));

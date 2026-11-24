@@ -170,3 +170,16 @@ body {
   color: #737373;
   margin: 1em 0;
 }
+
+/* 專案封面：所有封面一律鎖定 16:9，內容超出時裁切，避免卡片忽大忽小 */
+.cover-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+.cover-frame > * {
+  height: 100% !important;
+  min-height: 0 !important;
+  aspect-ratio: auto !important;
+}

@@ -7,6 +7,7 @@ import type { Project } from "@/data/projects";
 import { MarkdownRenderer } from "@/components/ui/MarkdownRenderer";
 import { ProjectCover } from "./ProjectCover";
 import { ProjectHighlights } from "./ProjectHighlights";
+import { ProjectMotivation } from "./ProjectMotivation";
 
 interface ProjectModalProps {
   project: Project | null;
@@ -101,6 +102,14 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                   ))}
                 </div>
                 <p className="mb-4 text-sm text-neutral-400">{project.summary}</p>
+                {project.motivation && (
+                  <div className="mb-6">
+                    <p className="mb-3 font-mono text-xs text-amber-400">
+                      {"// why_i_built_this"}
+                    </p>
+                    <ProjectMotivation text={project.motivation} />
+                  </div>
+                )}
                 {project.highlightItems && (
                   <div className="mb-6">
                     <p className="mb-3 font-mono text-xs text-cyber">

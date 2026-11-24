@@ -12,7 +12,7 @@ const steps = [
 
 export function PipelineCover() {
   return (
-    <div className="relative flex aspect-video w-full items-center justify-center gap-1 border-b border-border-dim bg-[#0a0a0a] px-2 sm:gap-3 sm:px-4">
+    <div className="relative flex aspect-video w-full items-center justify-center gap-1 border-b border-border-dim bg-[#0a0a0a] px-2 ">
       {steps.map((step, i) => (
         <div key={step.label} className="flex items-center">
           <motion.div
@@ -20,15 +20,15 @@ export function PipelineCover() {
             animate={{ opacity: [0.7, 1, 0.7] }}
             transition={{ duration: 2, repeat: Infinity, delay: i * 0.4 }}
           >
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-cyber/30 bg-cyber/5 text-lg sm:h-12 sm:w-12">
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-cyber/30 bg-cyber/5 text-lg ">
               {step.emoji}
             </div>
-            <span className="font-mono text-[8px] text-cyber/60 sm:text-[10px]">
+            <span className="font-mono text-[8px] text-cyber/60 ">
               {step.label}
             </span>
           </motion.div>
           {i < steps.length - 1 && (
-            <div className="relative mx-1 flex w-6 items-center sm:mx-2 sm:w-10">
+            <div className="relative mx-1 flex w-6 items-center">
               <div className="h-px w-full bg-gradient-to-r from-cyber/40 to-cyber/10" />
               <motion.div
                 className="absolute h-1.5 w-1.5 rounded-full bg-cyber shadow-[0_0_8px_#00f0ff]"

@@ -18,7 +18,11 @@ export function ProjectsSection() {
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, i) => (
-            <FadeInSection key={project.id} delay={i * 0.08}>
+            <FadeInSection
+              key={project.id}
+              delay={i * 0.08}
+              className="h-full"
+            >
               <ProjectCard
                 project={project}
                 onClick={() => setSelected(project)}

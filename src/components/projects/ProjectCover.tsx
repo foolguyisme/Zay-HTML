@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from "react";
 import type { CoverType } from "@/data/projects";
 import { YoutubeCover } from "./covers/YoutubeCover";
 import { TerminalCover } from "./covers/TerminalCover";
@@ -25,34 +26,47 @@ export function ProjectCover({
   coverImage,
   coverImageAlt,
 }: ProjectCoverProps) {
+  let cover: ReactNode = null;
+
   switch (type) {
     case "youtube":
-      return (
+      cover = (
         <YoutubeCover
           embedUrl={youtubeEmbedUrl}
           imageSrc={coverImage}
           imageAlt={coverImageAlt}
         />
       );
+      break;
     case "terminal":
-      return <TerminalCover />;
+      cover = <TerminalCover />;
+      break;
     case "chart":
-      return <ChartCover />;
+      cover = <ChartCover />;
+      break;
     case "pipeline":
-      return <PipelineCover />;
+      cover = <PipelineCover />;
+      break;
     case "ascii":
-      return <AsciiCover />;
+      cover = <AsciiCover />;
+      break;
     case "keyboard":
-      return <KeyboardCover />;
+      cover = <KeyboardCover />;
+      break;
     case "badge":
-      return <BadgeCover />;
+      cover = <BadgeCover />;
+      break;
     case "watermark":
-      return <WatermarkCover />;
+      cover = <WatermarkCover />;
+      break;
     case "guard":
-      return <GuardCover />;
+      cover = <GuardCover />;
+      break;
     case "caption":
-      return <CaptionCover />;
-    default:
-      return null;
+      cover = <CaptionCover />;
+      break;
   }
+
+  if (!cover) return null;
+  return <div className="cover-frame">{cover}</div>;
 }
