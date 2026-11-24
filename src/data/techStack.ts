@@ -37,12 +37,15 @@ export const techStackCategories: TechCategory[] = [
       "WebSocket",
       "Vue 3",
       "Chrome Extension (MV3)",
+      "C# / .NET",
+      "WPF",
+      "SQLite",
     ],
   },
   {
     id: "devops-tools",
     title: "DevOps & Tools",
     icon: Wrench,
-    skills: ["Docker", "Git", "Linux", "自動化測試", "Pytest", "PowerShell"],
+    skills: ["Docker", "Git", "Linux", "自動化測試", "Pytest", "xUnit", "PowerShell"],
   },
 ];

@@ -12,6 +12,7 @@ import { BadgeCover } from "./covers/BadgeCover";
 import { WatermarkCover } from "./covers/WatermarkCover";
 import { GuardCover } from "./covers/GuardCover";
 import { CaptionCover } from "./covers/CaptionCover";
+import { SentinelCover } from "./covers/SentinelCover";
 
 interface ProjectCoverProps {
   type: CoverType;
@@ -64,6 +65,9 @@ export function ProjectCover({
       break;
     case "caption":
       cover = <CaptionCover />;
+      break;
+    case "sentinel":
+      cover = <SentinelCover />;
       break;
   }
 

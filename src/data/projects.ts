@@ -12,7 +12,8 @@ export type CoverType =
   | "badge"
   | "watermark"
   | "guard"
-  | "caption";
+  | "caption"
+  | "sentinel";
 
 export interface Project {
   id: string;
@@ -83,6 +84,15 @@ const baseProjects: Omit<Project, "motivation">[] = [
       "在員工把資料送進 ChatGPT、Claude、Gemini、Copilot 之前，於瀏覽器本機偵測 Email、卡號、API 金鑰與企業關鍵字，依政策提醒、遮罩或阻擋；事件只留中繼資料，不保存提示原文。",
     coverType: "guard",
     readmePath: "/projects/ai-guard.md",
+  },
+  {
+    id: "laptop-sentinel",
+    title: "LaptopSentinel 個人筆電入侵監測系統",
+    tags: ["C#", ".NET 10", "WPF", "SQLite", "Windows Defender", "xUnit"],
+    summary:
+      "常駐托盤的本機入侵監測工具：整合 Defender 事件、TCP 連線與自動啟動項目，依證據關聯出警示並用白話說明下一步；離線運作、不自動刪檔或上傳資料，精簡版僅 4.4 MiB。",
+    coverType: "sentinel",
+    readmePath: "/projects/laptop-sentinel.md",
   },
   {
     id: "shengyi-captions",
