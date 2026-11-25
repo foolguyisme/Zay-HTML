@@ -37,6 +37,7 @@ export const techStackCategories: TechCategory[] = [
       "WebSocket",
       "Vue 3",
       "Chrome Extension (MV3)",
+      "Clean Architecture / DDD",
       "C# / .NET",
       "WPF",
       "SQLite",

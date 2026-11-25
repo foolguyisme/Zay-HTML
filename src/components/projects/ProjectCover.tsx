@@ -13,6 +13,7 @@ import { WatermarkCover } from "./covers/WatermarkCover";
 import { GuardCover } from "./covers/GuardCover";
 import { CaptionCover } from "./covers/CaptionCover";
 import { SentinelCover } from "./covers/SentinelCover";
+import { StoryflowCover } from "./covers/StoryflowCover";
 
 interface ProjectCoverProps {
   type: CoverType;
@@ -68,6 +69,9 @@ export function ProjectCover({
       break;
     case "sentinel":
       cover = <SentinelCover />;
+      break;
+    case "storyflow":
+      cover = <StoryflowCover />;
       break;
   }
 

@@ -13,7 +13,8 @@ export type CoverType =
   | "watermark"
   | "guard"
   | "caption"
-  | "sentinel";
+  | "sentinel"
+  | "storyflow";
 
 export interface Project {
   id: string;
@@ -58,6 +59,22 @@ const baseProjects: Omit<Project, "motivation">[] = [
     coverType: "terminal",
     readmePath: "/projects/ai-coder.md",
     featured: true,
+  },
+  {
+    id: "content-machine",
+    title: "ContentMachine 本地端電子小說生成工作流",
+    tags: [
+      "Python",
+      "Pydantic v2",
+      "Clean Architecture",
+      "DDD",
+      "pytest",
+      "uv",
+    ],
+    summary:
+      "以 MoneyPrinterTurbo 為起點、重新設計的 v3 分層架構：專案工作區、Story JSON、角色與場景參照解析、Director Agent 分鏡規劃。目前為 MVP，已串接到分鏡規劃，提示詞、供應商與渲染尚在規劃中。",
+    coverType: "storyflow",
+    readmePath: "/projects/content-machine.md",
   },
   {
     id: "wm3-watermark",
